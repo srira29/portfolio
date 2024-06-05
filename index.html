@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <title>Sri Rakumari Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/3fd53a9e97.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            var optionsHtml = document.getElementById("options");
+            var images = {'august':['images/august-newsletters/AUGUST NEWSLETTER-images-0.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-1.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-2.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-3.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-4.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-5.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-6.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-7.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-8.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-9.jpg',
+                                    'images/august-newsletters/AUGUST NEWSLETTER-images-10.jpg',
+                                    ],
+                            'september':['images/september-newsletter/SEPTEMBER NEWSLETTER-images-0.jpg',
+                                        'images/september-newsletter/SEPTEMBER NEWSLETTER-images-1.jpg',
+                                        'images/september-newsletter/SEPTEMBER NEWSLETTER-images-2.jpg',
+                                        'images/september-newsletter/SEPTEMBER NEWSLETTER-images-3.jpg',
+                                        'images/september-newsletter/SEPTEMBER NEWSLETTER-images-4.jpg',
+                                        'images/september-newsletter/SEPTEMBER NEWSLETTER-images-5.jpg',
+                                        'images/september-newsletter/SEPTEMBER NEWSLETTER-images-6.jpg',
+                                        'images/september-newsletter/SEPTEMBER NEWSLETTER-images-7.jpg'],
+                            'october':['images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-1.png',
+                                        'images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-2.png',
+                                        'images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-3.png',
+                                        'images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-4.png',
+                                        'images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-5.png',
+                                        'images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-6.png',
+                                        'images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-7.png',
+                                        'images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-8.png',
+                                        ],
+                            'november':['images/NOVEMBER NEWSLETTER/NOVEMBER NEWSLETTER-1.png',
+                                        'images/NOVEMBER NEWSLETTER/NOVEMBER NEWSLETTER-2.png',
+                                        'images/NOVEMBER NEWSLETTER/NOVEMBER NEWSLETTER-3.png',
+                                        'images/NOVEMBER NEWSLETTER/NOVEMBER NEWSLETTER-4.png',
+                                        'images/NOVEMBER NEWSLETTER/NOVEMBER NEWSLETTER-5.png',],
+                            'december':['images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-1.png',
+                                        'images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-2.png',
+                                        'images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-3.png',
+                                        'images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-4.png',
+                                        'images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-5.png',
+                                        'images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-6.png',
+                                        'images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-7.png',
+                                        'images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-8.png'],
+                            'lawsimulation':['images/Law simulation event booklet/Law simulation event booklet-01.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-02.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-03.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-04.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-05.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-06.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-07.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-08.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-09.png',
+                                            'images/Law simulation event booklet/Law simulation event booklet-10.png'],
+                            'adultipe':['images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-1.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-2.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-3.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-4.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-5.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-6.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-7.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-8.png',
+                                        'images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-9.png'],
+                            'healthleadership':['images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-01.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-02.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-03.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-04.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-05.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-06.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-07.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-08.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-09.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-10.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-11.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-12.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-13.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-14.png',
+                                                'images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-15.png']}
+            function opentab(activeTab) {
+                for(eachlink of tablinks){
+                    eachlink.classList.remove("active-link")
+                }
+                for(eachtab of tabcontents){
+                    eachtab.classList.remove("active-tab")
+                }
+
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(activeTab).classList.add("active-tab")
+            }
+            function opentabForExperience(activeTab, name) {
+                var tablinks = document.getElementsByClassName("tab-links " + name);
+                var tabcontents = document.getElementsByClassName("tab-contents " + name);
+                for(eachlink of tablinks){
+                    eachlink.classList.remove("active-link")
+                }
+                for(eachtab of tabcontents){
+                    eachtab.classList.remove("active-tab")
+                }
+
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(name + ' ' + activeTab).classList.add("active-tab")
+            }
+            function openOptions(){
+                document.getElementById("options").style.right = "0";
+            }
+
+            function closeOptions() {
+                document.getElementById("options").style.right = "-200px";
+            }
+
+            function nextImage(name){
+                query = "."+name+ " img"
+                var currIndex = parseInt(document.querySelector(query).id);
+                var nextIndex = currIndex + 1
+                if (nextIndex >= images[name].length) {
+                    nextIndex = 0;
+                }
+                document.querySelector(query).src = images[name][nextIndex]
+                document.querySelector(query).id = nextIndex.toString()
+            }
+
+            function prevImage(name){
+                query = "."+name+ " img"
+                var currIndex = parseInt(document.querySelector(query).id);
+                var nextIndex = currIndex - 1
+                if (nextIndex < 0) {
+                    nextIndex = images[name].length - 1;
+                }
+                document.querySelector(query).src = images[name][nextIndex]
+                document.querySelector(query).id = nextIndex.toString()
+            }
+        </script>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <!-- logo name in the nav bar need to do it in canva -->
+                    <!-- <img src="images/logo.png" class="logo"> -->
+                    <ul id="options">
+                        <li><a href="#header">Home</a></li>
+                        <!-- <li><a href="#about">About</a></li> -->
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#myWork">My Work</a></li>
+                        <li><a href="#">Awards</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closeOptions()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openOptions()"></i>
+                </nav>
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/profile.jpeg">
+                    </div>
+                    <div class="about-col-2">
+                        <!-- <h1 class="subtitle">About Me</h1> -->
+                        <p>You are seeing a girl's profile from a village without a hospital becoming a future healthcare change-maker. Let's connect and work towards a healthier world together.</p>
+                        <p class="name-right">- Dr. Sri Rakumari Mendu</p>
+                        <!-- <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- <div class="header-text">
+                    <div class="about-col-1">
+                        <img src="images/profile.jpeg">
+                    </div> -->
+                    <!-- <p>HEALTH CARE ADMISTARTER</p> -->
+                    <!-- <h1>Hi, I'm <span>Srira</span>from India Masters <br>in Health CAre Administartion</h1>
+                </div> -->
+            </div>
+
+        </div>
+        <!-- <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/profile.jpeg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="subtitle">About Me</h1>
+                        <p>askhdsfuyewufweiuhdfhsdkjdfcgawuyeifuewhafhwedvadvadfvgerfgewthweragvd sdjvksdh  jhsgfsd gfshK hjagsduys jhdgyuasgd jgduywa jgduywa afhhjawehjfchjwsefuihu</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                list of skills
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                list of experience
+                                <li><span>HEalth experience</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                list of education
+                                <li><span>HEalth education</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                                <li><span>HEalth administartion</span><br>providing better health</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div id="education">
+            <div class="container">
+                <h1 class="subtitle">Education</h1>
+                <div class="edu-list">
+                    <div class="degree">
+                        <div class="degree-col1">
+                            <img src="images/college/gvsu.jpeg">
+                        </div>
+                        <div class="clg-details degree-col2">
+                            <h2>Grand Valley State University</h2>
+                            <h4>Master's in Health Care Administartion</h4>
+                            <h5>GPA : 3.94</h5>
+                        </div>
+                    </div>
+                    <div class="degree">
+                        <div class="degree-col1">
+                            <img src="images/college/acharya.jpeg">
+                        </div>
+                        <div class="clg-details degree-col2">
+                            <h2>Acharya Nagarjuna University</h2>
+                            <h4>Post Graduate Diploma in Hospital and Healthcare Management</h4>
+                            <h5>GPA : 4.0</h5>
+                        </div>
+                    </div>
+                    <div class="degree">
+                        <div class="degree-col1">
+                            <img src="images/college/acharya.jpeg">
+                        </div>
+                        <div class="clg-details degree-col2">
+                            <h2>Acharya Nagarjuna University</h2>
+                            <h4>Master's of Food and Nutritional Science</h4>
+                            <h5>GPA : 4.0</h5>
+                        </div>
+                    </div>
+                    <div class="degree">
+                        <div class="degree-col1">
+                            <img src="images/college/DrNTR.png">
+                        </div>
+                        <div class="clg-details degree-col2">
+                            <h2>Dr. NTR University of Health Sciences</h2>
+                            <h4>Bachelor's of Ayurvedic Medicine and Surgery (BAMS)</h4>
+                            <h5>GPA : 3.78</h5>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="experience">
+            <div class="container">
+                <h1 class="subtitle">Experience</h1>
+                <div class="exp-list">
+                    <div class="exp">
+                        <h1>Grand Valley State Univeristy, Grand Rapids, MI</h1>
+                        <div class="exp-details">
+                            <div class="expe-header">
+                                <h2>Graduate Assistant</h2>
+                                <h3>August 2023 - April 2024</h3>
+                            </div>
+                            <div class="tab-titles">
+                                <p class="tab-links gvsu-ga active-link" onclick="opentabForExperience('contributions', 'gvsu-ga')">Contributions</p>
+                                <p class="tab-links gvsu-ga" onclick="opentabForExperience('learnings', 'gvsu-ga')">Learnings</p>
+                            </div>
+                            <div class="tab-contents gvsu-ga active-tab" id="gvsu-ga contributions">
+                                <ul>
+                                    <!-- list of contributions -->
+                                    <li>Collaborated with Professor Priscilla Kimboko to design and develop a course.</li>
+                                    <li>Conducted research to incorporate the latest findings into the course curriculum.</li>
+                                    <li>Participated in weekly meetings with the Professor to discuss course objectives, outline lesson plans, and establish assessment criteria.</li>
+                                    <li>Created assignments and reading materials to facilitate effective teaching and student engagement.</li>
+                                    <li>Worked with Professor Larry Warkoczeski to compile student study materials, further enhancingthe learning experience.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents gvsu-ga" id="gvsu-ga learnings">
+                                <ul>
+                                    <!-- list of Learnings -->
+                                    <li>Developed course design and content creation skills.</li>
+                                    <li>Enhanced collaboration and communication abilities through regular meetings.</li>
+                                    <li>Gained experience in integrating cutting-edge research into course curriculum.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-details">
+                            <div class="expe-header">
+                                <h2>Simulation Lab Assistant</h2>
+                                <h3>August 2022 - April 2023</h3>
+                            </div>
+                            <div class="tab-titles">
+                                <p class="tab-links gvsu-sim-as active-link" onclick="opentabForExperience('contributions', 'gvsu-sim-as')">Contributions</p>
+                                <p class="tab-links gvsu-sim-as" onclick="opentabForExperience('learnings', 'gvsu-sim-as')">Learnings</p>
+                            </div>
+                            <div class="tab-contents gvsu-sim-as active-tab" id="gvsu-sim-as contributions">
+                                <ul>
+                                    <!-- list of contributions -->
+                                    <li>Prepared and maintained simulation equipment, ensuring seamless activities.</li>
+                                    <li>Assisted with the setup and breakdown of simulation scenarios and activities.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents gvsu-sim-as" id="gvsu-sim-as learnings">
+                                <ul>
+                                    <!-- list of Learnings -->
+                                    <li>Developed skills in simulation lab setup and operation.</li>
+                                    <li>Gained experience in maintaining records and scheduling.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-details">
+                            <div class="expe-header">
+                                <h2>Simulation Lab Ambassador</h2>
+                                <h3>February 2023 - April 2023</h3>
+                            </div>
+                            <div class="tab-titles">
+                                <p class="tab-links gvsu-sim-amb active-link" onclick="opentabForExperience('contributions', 'gvsu-sim-amb')">Contributions</p>
+                                <p class="tab-links gvsu-sim-amb" onclick="opentabForExperience('learnings', 'gvsu-sim-amb')">Learnings</p>
+                            </div>
+                            <div class="tab-contents gvsu-sim-amb active-tab" id="gvsu-sim-amb contributions">
+                                <ul>
+                                    <!-- list of contributions -->
+                                    <li>Provided overviews of the lab to visitors, students, and their family members.</li>
+                                    <li>Actively promoted the simulation lab to highlight its capabilities.</li>
+                                    <li>Collaborated with staff to ensure adherence to policies.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents gvsu-sim-amb" id="gvsu-sim-amb learnings">
+                                <ul>
+                                    <!-- list of Learnings -->
+                                    <li>Developed communication and promotional skills.</li>
+                                    <li>Gained insight into lab management and policy adherence.</li>
+                                    <li>Enhanced collaborative efforts in a team-oriented healthcare environment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp">
+                        <h1>Guardian Angel Home Care and Hospice, Rochester Hills, MI</h1>
+                        <div class="exp-details">
+                            <div class="expe-header">
+                                <h2>Digital Intake Coordinator</h2>
+                                <h3>May 2023 - August 2023</h3>
+                            </div>
+                            <div class="tab-titles">
+                                <p class="tab-links guardian active-link" onclick="opentabForExperience('contributions', 'guardian')">Contributions</p>
+                                <p class="tab-links guardian" onclick="opentabForExperience('learnings', 'guardian')">Learnings</p>
+                            </div>
+                            <div class="tab-contents guardian active-tab" id="guardian contributions">
+                                <ul>
+                                    <!-- list of contributions -->
+                                    <li>Coordinated efficient patient care through streamlined referral processes.</li>
+                                    <li>Ensured accurate data entry and verification of patient insurance coverage.</li>
+                                    <li>Facilitated consistent and timely communication among healthcare professionals.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents guardian" id="guardian learnings">
+                                <ul>
+                                    <!-- list of Learnings -->
+                                    <li>Developed skills in referral coordination and data management.</li>
+                                    <li>Gained insight into insurance verification processes.</li>
+                                    <li>Enhanced communication abilities in a fast-paced healthcare environment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp">
+                        <h1>Mary Free Bed Rehabilitation Hospital, Grand Rapid MI</h1>
+                        <div class="exp-details">
+                            <div class="expe-header">
+                                <h2>Interprofessional Education Intern</h2>
+                                <h3>August 2022- December 2022</h3>
+                            </div>
+                            <div class="tab-titles">
+                                <p class="tab-links mary active-link" onclick="opentabForExperience('contributions', 'mary')">Contributions</p>
+                                <p class="tab-links mary" onclick="opentabForExperience('learnings', 'mary')">Learnings</p>
+                            </div>
+                            <div class="tab-contents mary active-tab" id="mary contributions">
+                                <ul>
+                                    <!-- list of contributions -->
+                                    <li>Coordinated and facilitated interprofessional education events for healthcare professionals.</li>
+                                    <li>Conducted literature reviews and research to support education materials.</li>
+                                    <li>Ensured successful interprofessional education events through effective collaboration.</li>
+                                    <li>Conducted thorough PHQ audits using EPIC, ensuring accuracy and compliance with established protocols.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents mary" id="mary learnings">
+                                <ul>
+                                    <!-- list of Learnings -->
+                                    <li>Developed skills in event coordination and literature reviews.</li>
+                                    <li>Gained experience in interprofessional collaboration.</li>
+                                    <li>Enhanced organizational and planning skills.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp">
+                        <h1>Andhra Hospitals, Vijayawada, India</h1>
+                        <div class="exp-details">
+                            <div class="expe-header">
+                                <h2>Physician</h2>
+                                <h3>June 2016- November 2021</h3>
+                            </div>
+                            <div class="tab-titles">
+                                <p class="tab-links andhra active-link" onclick="opentabForExperience('contributions', 'andhra')">Contributions</p>
+                                <p class="tab-links andhra" onclick="opentabForExperience('learnings', 'andhra')">Learnings</p>
+                            </div>
+                            <div class="tab-contents andhra active-tab" id="andhra contributions">
+                                <ul>
+                                    <!-- list of contributions -->
+                                    <li>Provided primary healthcare services and emergency responses.</li>
+                                    <li>Coordinated efficient patient care and maintained accurate documentation.</li>
+                                    <li>Educated patients and ensured compliance with hospital policies.</li>
+                                    <li>Contributed to creating study materials for clinical and non-clinical staff during the NABH accreditation process.</li>
+                                    <li>Managed a team of two nurses, one ECG, and one TMT technician in the Cardiac Outpatient Department.</li>
+                                    <li>Worked 12-hour shifts even during the COVID-19 pandemic, providing critical healthcare services</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents andhra" id="andhra learnings">
+                                <ul>
+                                    <!-- list of Learnings -->
+                                    <li>Developed expertise in emergency response and patient education.</li>
+                                    <li>Enhanced coordination skills in a multidisciplinary medical team.</li>
+                                    <li>Maintained compliance with policies and regulations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp">
+                        <h1>Sri Surya Clinic, Vijayawada, India</h1>
+                        <div class="exp-details">
+                            <div class="expe-header">
+                                <h2>Ayurvedic Intern</h2>
+                                <h3>September 2015 - May 2016</h3>
+                            </div>
+                            <div class="tab-titles">
+                                <p class="tab-links srisurya active-link" onclick="opentabForExperience('contributions', 'srisurya')">Contributions</p>
+                                <p class="tab-links srisurya" onclick="opentabForExperience('learnings', 'srisurya')">Learnings</p>
+                            </div>
+                            <div class="tab-contents srisurya active-tab" id="srisurya contributions">
+                                <ul>
+                                    <!-- list of contributions -->
+                                    <li>Developed customized treatment plans on Ayurvedic principles</li>
+                                    <li>Administered Ayurvedic treatments and therapies, ensuring quality assurance.</li>
+                                    <li>Collaborated with healthcare professionals to provide comprehensive care.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents srisurya" id="srisurya learnings">
+                                <ul>
+                                    <!-- list of Learnings -->
+                                    <li>Developed skills in Ayurvedic patient assessment and treatment planning.</li>
+                                    <li>Gained experience in maintaining quality assurance.</li>
+                                    <li>Enhanced collaborative healthcare practices.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myWork">
+            <div class="container">
+                <h1 class="subtitle">My Work</h1>
+                <div class="work-list">
+                    <div class="work august">
+                        <img id= "0" src="images/august-newsletters/AUGUST NEWSLETTER-images-0.jpg">
+                        <div class="left-arrow" onclick="prevImage('august')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('august')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>AUGUST NEWSLETTER</p>
+                    </div>
+                    <div class="work september">
+                        <img id= "0" src="images/august-newsletters/AUGUST NEWSLETTER-images-0.jpg">
+                        <div class="left-arrow" onclick="prevImage('september')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('september')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>SEPTEMBER NEWSLETTER</p>
+                    </div>
+                    <div class="work october">
+                        <img id= "0" src="images/OCTOBER NEWSLETTER/OCTOBER NEWSLETTER-1.png">
+                        <div class="left-arrow" onclick="prevImage('october')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('october')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>OCTOBER NEWSLETTER</p>
+                    </div>
+                    
+                </div>
+                <div class="work-list">
+                    <div class="work november">
+                        <img id= "0" src="images/NOVEMBER NEWSLETTER/NOVEMBER NEWSLETTER-1.png">
+                        <div class="left-arrow" onclick="prevImage('november')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('november')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>NOVEMBER NEWSLETTER</p>
+                    </div>
+                    <div class="work december">
+                        <img id= "0" src="images/DECEMBER NEWSLETTER/DECEMBER NEWSLETTER-1.png">
+                        <div class="left-arrow" onclick="prevImage('december')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('december')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>DECEMBER NEWSLETTER</p>
+                    </div>
+                    <div class="work ipe">
+                        <img id= "0" src="images/ADULT IPE SIMULATION FLYER 2 PDF/ADULT IPE SIMULATION FLYER 2 PDF-1.png">
+                        <!-- <div class="left-arrow" onclick="prevImage('september')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('september')"><i class="fa-solid fa-arrow-right-long"></i></div> -->
+                        <p>SIMULATION IPE</p>
+                    </div>
+                </div>
+                <div class="work-list">
+                    <div class="work lawsimulation">
+                        <img id= "0" src="images/Law simulation event booklet/Law simulation event booklet-01.png">
+                        <div class="left-arrow" onclick="prevImage('lawsimulation')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('lawsimulation')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>LAW SIMULATION</p>
+                    </div>
+                    <div class="work adultipe">
+                        <img id= "0" src="images/Adult IPE SIMULATION PREPARATION BOOKLET/Adult IPE SIMULATION PREPARATION BOOKLET-1.png">
+                        <div class="left-arrow" onclick="prevImage('adultipe')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('adultipe')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>ADULT IPE SIMULATION BOOKLET</p>
+                    </div>
+                    <div class="work healthleadership">
+                        <img id= "0" src="images/HealthCare Leadership Booklet/HealthCare Leadership Booklet-01.png">
+                        <div class="left-arrow" onclick="prevImage('healthleadership')"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <div class="right-arrow" onclick="nextImage('healthleadership')"><i class="fa-solid fa-arrow-right-long"></i></div>
+                        <p>HEALTHCARE LEADERSHIP</p>
+                    </div>
+                </div>
+            </div> 
+              
+        </div>
+        <div id="contact">
+            
+            <div class="container">
+                <h1 class="subtitle">Contact</h1>
+                <div class="contact-info">
+                    <p><a href="mailto:srira.mendu@gmail.com"><i class="fa-regular fa-envelope"></i>  srira.mendu@gmail.com</a></p>
+                    <p><i class="fa-solid fa-phone"></i>  +1 (947) 226 0650</p>
+                    <p><a href="linkedin.com/"><i class="fa-brands fa-linkedin"></i> Sri Rakumari mendu</a></p>
+                </div>
+                <a href="images/Mendu_Resume.pdf" download class="btn-cv">Download CV</a>
+            </div>
+                
+        </div>
+    </body>
+</html>
