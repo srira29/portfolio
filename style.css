@@ -136,6 +136,11 @@ nav ul li a:hover::after{
     color: transparent; */
 }
 
+.git-link {
+    color: white;
+    display: flex;
+}
+
 
 .tab-titles{
     display: flex;
